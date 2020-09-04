@@ -5,7 +5,7 @@ Skill1 = input("What coding language you know except bash: ")
 Skill2 = input("Do you know K8s?  (yes/no) :")
 Skill3 = input("Do you know Azure? ")
 Skill4 = input("Number of years you have worked in cloud? :")
-if Skill1 in Language and Skill2 in Tech or Skill3 in Tech and int(Skill4) >= 5:
+if Skill1 in Language and (Skill2 in Tech or Skill3 in Tech) and int(Skill4) >= 5:
     print("Congrats you have right skill set for this Role!!")
 else:
     print("Sorry you lack expertise for this role")
