@@ -1,14 +1,39 @@
+#!/usr/bin/env python
+import sys
 #this code is to practise if / else
-Language = [ "python", "go", "java" ]
+Language = [ "python", "go", "java", "others" ]
 Tech = [ "Yes", "yes"]
 print( "Lets see if you are eligible for Dev Ops role: ")
-Skill1 = input("What coding language you know, Options " + str(Language) + ": ")
-Skill2 = input("Do you know K8s?  (yes/no) :")
-Skill3 = input("Do you know Azure? ")
+counter = 0
+Skill1 = input("What coding language you know, Options " + str(Language) + ": ").lower()
+while counter < 4:
+    if Skill1 not in Language:
+        Skill1=input("Please choose from provided options only, Options " + str(Language) + ": ").lower()
+        counter += 1
+        print( "You used " + str(counter) + " of your 3 attempts to answer this " )
+    elif Skill1[0:2] in Language:
+        break
+    if counter > 3 or Skill1 == Language[3]:  ## in vs ==, also had to use new if
+        print("Please learn one of above languages before you apply again!!")
+        sys.exit()
+Skill2 = input("Do you know K8s?  (yes/no) :").lower()
+Skill3 = input("Do you know Azure?  (yes/no) :").lower()
 Skill4 = input("Number of years you have worked in cloud? :")
-if Skill4.isdigit() == False:
-    print("Please enter only numbers for years")
-elif Skill1.lower() in Language and (Skill2 in Tech or Skill3 in Tech) and int(Skill4) >= 5:
+counter = 0
+while counter < 4:
+    if Skill4.isdigit() == False:
+        Skill4=input("Please enter only numbers for years: ")
+        counter += 1
+    elif Skill4.isdigit() == True and int(Skill4) > 8:
+        Skill4=input("Enter valid expirience")
+        counter += 1
+    elif Skill4.isdigit() == True and int(Skill4) <= 8:
+        print("Thanks")
+        break
+    if counter > 3:
+        print("TIME OUT!!!")
+        sys.exit()
+if Skill1.lower() in Language[0:2] and (Skill2 in Tech or Skill3 in Tech) and int(Skill4) >= 5 and int(Skill4)<=9:
     print("Congrats you have right skill set for this Role!!")
 else:
-    print("Sorry you lack expertise for this role " + str(Language) )
+    print("Sorry you lack expertise for this role)
