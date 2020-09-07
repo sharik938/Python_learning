@@ -13,7 +13,7 @@ while counter < 4:
         print( "You used " + str(counter) + " of your 3 attempts to answer this " )
     elif Skill1[0:2] in Language:
         break
-    if counter > 3 or Skill1 == Language[3]:  ## in vs ==, also had to use new if
+    if counter > 3 or Skill1 in Language[3]:  ## in vs ==, also had to use new if
         print("Please learn one of above languages before you apply again!!")
         sys.exit()
 Skill2 = input("Do you know K8s?  (yes/no) :").lower()
@@ -36,4 +36,4 @@ while counter < 4:
 if Skill1.lower() in Language[0:2] and (Skill2 in Tech or Skill3 in Tech) and int(Skill4) >= 5 and int(Skill4)<=9:
     print("Congrats you have right skill set for this Role!!")
 else:
-    print("Sorry you lack expertise for this role)
+    print("Sorry you lack expertise for this role")
