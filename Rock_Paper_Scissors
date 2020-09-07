@@ -8,44 +8,47 @@ Computer = List[randint(0,2)]
 Tie = 0
 Win = 0
 Loose = 0
-#Set player to False to get a loop
+#Set player to False
 Player = False
 while Player == False:
     Player = input("Choose from: (r)ock, (p)aper, (s)cissors or (q)uit: ").lower()
-    print("Computer choose " + Computer)
     if Player == Computer:
         print("Its a TIE!!!")
         Tie += 1
     elif Player == "r" and Computer == "p":
-        print("You loose, Paper covers Rock!!")
+        print("You loose, your choice was " + Player + " and Computer choose " + Computer + " , Paper covers Rock!!")
         Loose += 1
     elif Player == "r" and Computer == "s":
-        print("You win Rock smashes Scissor")
+        print("You win your choice was " + Player + " and Computer choose " + Computer + " ,Rock smashes Scissor")
         Win += 1
     elif Player == "s" and Computer == "p":
-        print("You win Scissor cuts paper!")
+        print("You win your choice was " + Player + " and Computer choose " + Computer + " ,Scissor cuts paper!")
         Win += 1
     elif Player == "s" and Computer == "r":
-        print("You loose, Rock smashes scissor")
+        print("You loose, your choice was " + Player + " and Computer choose " + Computer + " , Rock smashes scissor")
         Loose += 1
     elif Player == "p" and Computer == "r" :
-        print("You win, Paper covers rock!!")
+        print("You win, your choice was " + Player + " and Computer choose " + Computer + " ,Paper covers rock!!")
         Win += 1
     elif Player == "p" and Computer == "s":
-        print("You loose, as scissor cuts paper")
+        print("You loose, your choice was " + Player + " and Computer choose " + Computer + " , scissor cuts paper")
         Loose += 1
     elif Player == "q":
+        print(" ")
         print("Thanks for playing!!!")
         print( "Total Games played = " + str(int(Win) + int(Loose) + int(Tie)))
         print( "Your Score : " + "Wins: " +str(Win) + " ,Loose: " + str(Loose) + " ,Tie: " + str(Tie))
         if Win > Loose:
-            print("Overall you BEAT the Computer!!!")
+            print(" ")
+            print("Overall you BEAT the Computer!!!...Good JOB!!!")
         elif Loose > Win:
-            print("Computer got better of you!!!")
+            print(" ")
+            print("Computer got better of you!..Better luck next time!!!")
         else:
-            print("You and Coputer were at par!!")
+            print(" ")
+            print("You and Computer were at par...!!")
         sys.exit()
     else:
         print("Choose valid option")
-    Player = False.   ###Resetting player to false to continue loop.
+    Player = False
     Computer = List[randint(0, 2)]
