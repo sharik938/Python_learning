@@ -1,0 +1,26 @@
+list = ['test', 'test1', 'sharik', 'sam', 'hardeep', 'mandeep']
+print("This is current list: " + str(list) )
+def append(name):
+    while name in list:
+        name = input("Username already exists, please use different username")
+    else:
+        list.append(name)
+        list.sort()
+        print("Username Registered, updated list is: " + str(list))
+        print('Total number of users are: ' + str(len(list)))
+def remove(name):
+    while name in list:
+        list.remove(name)
+        list.sort()
+        print("User " + name + " is removed, new list is: " + str(list))
+        break
+    else:
+        print("User " + name + " is already not part of the list")
+action = input("You want to add or remove? ")
+name = input("Enter your name: ")
+if action == "add":
+    append(name)
+elif action == "remove":
+    remove(name)
+else:
+    print("Thanks for your time")
