@@ -1,0 +1,19 @@
+birthdays = { 'sam': 'March 2', 'sharik': 'Mar 8' }
+while True:
+    print("Enter name: ")
+    name = input().lower()
+    if name in birthdays:
+        print("Birthday for " + name + " is on " + birthdays[name])
+    elif name not in birthdays:
+        add_name = input("This name does not exist in our DB, you want to add? y/n")
+        if add_name == "y":
+            date = input("Enter Date for " + name)
+            birthdays[name] = date
+            print("Database updated with " + name)
+            break
+        else:
+            print("Thanks signing out, no changes done")
+            break
+        print("I m here")
+    else:
+        break
