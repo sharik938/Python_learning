@@ -1,0 +1,8 @@
+message = "Test number of charachetrs used in this line, Even before the Internet, it was possible"
+count = {}
+for x in message.lower():
+    count.setdefault(x, 0)
+    count[x] = count[x] + 1
+print(count)
+for x, y in count.items():
+     print(x + " is used " + str(y) + " times")
