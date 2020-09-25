@@ -12,7 +12,7 @@ def word_counter():
     if word == "all":
         for x in text_set:
             counter[x] = text_list.count(x)
-        for k,v in sorted(counter.items(), key=lambda x: x[1]):
+        for k,v in sorted(counter.items(), key=lambda x: x[1], reverse= True):
             print(v,k)
 #            print(x + " : " + str(text_list.count(x)) + " times")
     elif word == "":
