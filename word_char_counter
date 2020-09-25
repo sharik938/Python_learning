@@ -1,0 +1,38 @@
+import os
+import string
+infile = input("Enter fine name: ")
+file = open(infile, 'r')
+text = file.read()
+text_list = text.split()
+text_set = set(text_list)
+file.close()
+counter = {}
+def word_counter():
+    word = input("Enter which word you want to check for count, [all] to check everything: ")
+    if word == "all":
+        for x in text_set:
+            counter[x] = text_list.count(x)
+        for k,v in sorted(counter.items(), key=lambda x: x[1]):
+            print(v,k)
+#            print(x + " : " + str(text_list.count(x)) + " times")
+    elif word == "":
+        print("Thanks")
+    else:
+        print(word + " is used : " + str(text_list.count(word)) + " times")
+def charachter_counter():
+    char = input("Enter which charachter you want to check for count, [all] to check everything: ")
+    while not char.isalpha():
+        char = input("Sorry need only alphabets: ")
+    else:
+        if char == "all":
+            for x in string.ascii_letters:
+                print(x + " is used: " + str(text.count(x)) + " times")
+        else:
+            print(char + " is used: " + str(text.count(char)) + " times")
+choice = input("You want to count word[w] or charchater[c]?")
+if choice == "w":
+    word_counter()
+elif choice == "c":
+    charachter_counter()
+else:
+    print("Sorry Not a valid choice")
