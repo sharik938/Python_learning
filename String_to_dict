@@ -1,0 +1,7 @@
+string = "Sharik is in 1: Hardeep is in 2: Mandeep is in 3"
+sep = input("Enter key, value seperator? ")
+word_sep = input("Enter words seperator? ")
+def dict_string(text):
+    s = dict((x.strip(), y.strip()) for x,y in (element.split(sep) for element in text.split(word_sep)))
+    print(s)
+dict_string(string)
