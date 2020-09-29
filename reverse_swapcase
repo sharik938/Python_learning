@@ -1,0 +1,10 @@
+sentence = "amsmsmsmWESOME is cODING"
+def reverse_words_order_and_swap_cases(sentence):
+    sentence = sentence.swapcase()
+    words = sentence.split()
+    # Write your code here
+    words = list(reversed(words))
+    print(" ".join(words))
+reverse_words_order_and_swap_cases(sentence)
+###this is to print every charachter reversed
+print(sentence[::-1].swapcase())
